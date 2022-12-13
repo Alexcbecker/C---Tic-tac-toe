@@ -14,6 +14,7 @@ namespace tic_tac_toe_alexander
         {
             do
             {
+                Console.Clear();
                 Console.WriteLine("\n");
                 Console.WriteLine("Player1:X and Player2:O");
                 Console.WriteLine("\n");
@@ -49,8 +50,8 @@ namespace tic_tac_toe_alexander
                     {
                         Console.WriteLine("Sorry the row {0} is already marked with {1}", choice, arr[choice]);
                         Console.WriteLine("\n");
-                      //  Console.WriteLine("Please wait 2 second board is loading again.....");
-                      //  Thread.Sleep(2000);
+                        Console.WriteLine("Please wait a moment, the board is loading again.....");
+                        Thread.Sleep(1500);
                     }
                     endGameCondidition = CheckWin();
                 } catch
@@ -63,7 +64,7 @@ namespace tic_tac_toe_alexander
                 }
             }
             while (endGameCondidition != 1 && endGameCondidition != -1);
-
+            Console.Clear();
             Board();
 
             if (endGameCondidition == 1)
@@ -89,6 +90,7 @@ namespace tic_tac_toe_alexander
             Console.WriteLine("     |     |      ");
         }
         private static int CheckWin()
+            //TODO("Improve this method, maybe we can have less code.")
         {
             if (arr[1] == arr[2] && arr[2] == arr[3])
             {
